@@ -13,7 +13,7 @@ jobs:
       working-directory: ./scrapper
       run: npm install
     - name: Scrape
-      working-directory: ./scraper
+      working-directory: ./scrapper
       run: npm run scraper
     - uses: mikeal/publish-to-github-action@master
       env:
