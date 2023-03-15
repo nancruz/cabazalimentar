@@ -1,0 +1,20 @@
+
+on:
+  schedule:
+    - cron:  '*/5 * * * *'
+name: Scrape Data
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build
+      working-directory: ./scrapper
+      run: npm install
+    - name: Scrape
+      working-directory: ./scraper
+      run: npm run scraper
+    - uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
