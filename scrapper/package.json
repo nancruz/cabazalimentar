@@ -1,0 +1,20 @@
+{
+  "name": "cabazalimentarpt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nuno Cruz",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "js-logger": "^1.6.1",
+    "lowdb": "^5.0.0",
+    "puppeteer": "^7.1.0"
+  },
+  "scripts": {
+    "db:clean": "rm db.json",
+    "scraper": "NODE_ENV=production node src/index.js",
+    "scraper:dev": "NODE_ENV=development node src/index.js",
+    "clean": "rm -r node_modules"
+  }
+}
